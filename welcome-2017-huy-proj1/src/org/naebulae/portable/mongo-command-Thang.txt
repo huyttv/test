@@ -1,0 +1,16 @@
+# !QA@WS#ED!@#321	
+
+[MONGO-CLEAN]
+/Users/phamdinhthang/Desktop/Dev_Tools/mongodb-osx-x86_64-3.4.2/bin/mongo <%DB_NAME%> --eval "db.dropDatabase()"
+
+[MONGO-RESTORE]
+/Users/phamdinhthang/Desktop/Dev_Tools/mongodb-osx-x86_64-3.4.2/bin/mongorestore -d <%DB_NAME%> <%RESTORE_FOLDER%>
+
+[MONGO-DUMP]
+/Users/phamdinhthang/Desktop/Dev_Tools/mongodb-osx-x86_64-3.4.2/bin/mongodump -d <%DB_NAME%> <%DUMP_FOLDER%>
+
+[dump 217]
+/usr/bin/mongodump -d faceshop2-loremy  -o /opt/export217-2017m03d21-mobile
+
+cd /opt/export217-2017m03d21-mobile
+zip -r /opt/export217-2017m03d21-mobile.zip *  

@@ -1,0 +1,16 @@
+# !QA@WS#ED!@#321
+
+[MONGO-CLEAN]
+mongo <%DB_NAME%> --eval "db.dropDatabase()"
+
+[MONGO-RESTORE]
+mongorestore -d <%DB_NAME%> <%RESTORE_FOLDER%>
+
+[MONGO-DUMP]
+mongodump -d <%DB_NAME%> <%DUMP_FOLDER%>
+
+[dump 217]
+mongodump -d faceshop2-loremy  -o /opt/export217-2017m03d21-mobile
+
+cd /opt/export217-2017m03d21-mobile
+zip -r /opt/export217-2017m03d21-mobile.zip *  

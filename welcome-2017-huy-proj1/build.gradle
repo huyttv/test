@@ -1,0 +1,105 @@
+buildscript {
+	repositories {
+		mavenCentral()
+		maven { url "https://repo.spring.io/snapshot" }
+		maven { url "https://repo.spring.io/milestone" }
+	}
+	dependencies {
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+jar {
+	baseName = 'viademy103'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "https://repo.spring.io/snapshot" }
+	maven { url "https://repo.spring.io/milestone" }
+}
+
+
+dependencies 
+{
+	compile files(System.getProperty("user.home") + "/.cached/pulljar/naebulae-2017m04d01-minimal.jar") 
+//	compile files(System.getProperty("user.home") + "/.cached/pulljar/naebulae-pull-2017-mar11.jar") 
+//	compile files(System.getProperty("user.home") + "/.cached/pulljar/naebulae-tomcat-2017-mar11.jar") 
+//	compile files(System.getProperty("user.home") + "/.cached/pulljar/naebulae-mongo-2017-mar11.jar") 
+//	compile files(System.getProperty("user.home") + "/.cached/pulljar/naebulae-dali-2017-mar11.jar") 
+//	compile files(System.getProperty("user.home") + "/.cached/pulljar/naebulae-util-2017-mar11.jar") 
+	
+
+	compile 'net.sf.opencsv:opencsv:2.3'
+	compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'	
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+	compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.2.2'
+	
+	
+	compile group: 'javax.mail', name: 'mail', version: '1.4.7'
+	compile group: 'org.slf4j', name: 'slf4j-nop', version: '1.7.21'
+	
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina
+		compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '8.5.3'
+		
+		// https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient
+	compile group: 'commons-httpclient', name: 'commons-httpclient', version: '3.1'
+		
+		
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad
+	compile group: 'org.apache.poi', name: 'poi-scratchpad', version: '3.2-FINAL'
+	
+	// https://mvnrepository.com/artifact/commons-lang/commons-lang
+	compile group: 'commons-lang', name: 'commons-lang', version: '2.3'
+	
+	// https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
+	
+	// https://mvnrepository.com/artifact/com.jcraft/jsch
+	compile group: 'com.jcraft', name: 'jsch', version: '0.1.53'
+	
+	// https://mvnrepository.com/artifact/org.boofcv/xuggler
+	compile group: 'org.boofcv', name: 'xuggler', version: '0.16'
+	
+	// https://mvnrepository.com/artifact/com.googlecode.mp4parser/isoparser
+	compile group: 'com.googlecode.mp4parser', name: 'isoparser', version: '1.0-RC-27'
+	
+	compile 'org.jcodec:jcodec-android:0.1.9'
+	
+	// https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+	compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3'
+	
+	// https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+	
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-csv
+	compile group: 'org.apache.commons', name: 'commons-csv', version: '1.1'
+	
+	// jsoup HTML parser library @ http://jsoup.org/
+	compile 'org.jsoup:jsoup:1.10.1'
+	
+	// https://mvnrepository.com/artifact/com.google.zxing/core
+	compile group: 'com.google.zxing', name: 'core', version: '3.2.1'
+	
+	// https://mvnrepository.com/artifact/org.apache.tika/tika-core
+	compile group: 'org.apache.tika', name: 'tika-core', version: '1.14'
+	
+	compile group: 'org.json', name: 'json', version: '20160212'
+	
+		compile 'com.ganyo:gcm-server:1.0.2'
+	compile 'com.notnoop.apns:apns:1.0.0.Beta6'
+
+}
+
+
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+	}
+}

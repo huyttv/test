@@ -1,0 +1,23 @@
+# !QA@WS#ED!@#321
+
+[MONGO-CLEAN]
+"C:\Program Files\MongoDB\Server\3.2\bin\mongo" <%DB_NAME%> --eval "db.dropDatabase()"
+
+[MONGO-RESTORE]
+"C:\Program Files\MongoDB\Server\3.2\bin\mongorestore" -d <%DB_NAME%> <%RESTORE_FOLDER%>
+
+[MONGO-DUMP]
+"C:\Program Files\MongoDB\Server\3.2\bin\mongodump" -d <%DB_NAME%> <%DUMP_FOLDER%>
+
+[dump 217]
+/usr/bin/mongodump -d subway168-express-mar30  -o /opt/export217-2017m04d17
+
+cd /opt/export217-2017m03d21-mobile
+zip -r /opt/export217-2017m03d21-mobile.zip *  
+
+[subway]
+"C:\Program Files\MongoDB\Server\3.2\bin\mongo" subway168-express-mar30 --eval "db.dropDatabase()"
+"C:\Program Files\MongoDB\Server\3.2\bin\mongorestore" -d subway168-express-mar30 D:\out-java\export202-20170522-100001\subway168-express-mar30
+
+/usr/bin/mongo subway168-express-mar30 --eval "db.dropDatabase()"
+/usr/bin/mongorestore -d subway168-express-mar30 /opt/export202-20170522-100001/subway168-express-mar30
