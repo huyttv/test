@@ -1,5 +1,8 @@
 package apps.firstapp.m1_api;
 
-public class __Base_Api {
+import apps.firstapp.FirstyFreshyBaseModule;
+
+public class __Base_Api extends FirstyFreshyBaseModule 
+{
 
 }
