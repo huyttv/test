@@ -13,7 +13,7 @@ public class FirstyFreshyBaseModule implements DaliRequestProcessor {
 	public void processRequest(DaliRequestArgs a) throws Exception
 	{
 		out = new HtmlWriter(a.response.getWriter());
-		out.h1("This is test " + System.currentTimeMillis());
+		out.h1("This is test " + System.currentTimeMillis() + " / " + this.getClass().getName());
 	}
 
 }

@@ -4,5 +4,9 @@ import apps.firstapp.FirstyFreshyBaseModule;
 
 public class __Base_Api extends FirstyFreshyBaseModule 
 {
+	public Object indexAction()
+	{
+		return null;
+	}
 
 }

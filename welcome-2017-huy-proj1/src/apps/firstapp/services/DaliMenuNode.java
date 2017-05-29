@@ -10,7 +10,7 @@ public class DaliMenuNode
 	public Class<?> targetClass;
 	@Override
 	public String toString() {
-		return "DaliMenuNode [targetClass=" + targetClass + ", targetAction=" + targetAction + ", nodes=" + nodes + "]";
+		return "DaliMenuNode#"+this.hashCode()+", targetClass=" + Res.name(targetClass) + ", targetAction=" + Res.name(targetAction);
 	}
 
 	public Method targetAction;

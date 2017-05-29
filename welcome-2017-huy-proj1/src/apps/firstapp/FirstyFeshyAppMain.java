@@ -59,6 +59,7 @@ public class FirstyFeshyAppMain extends DaliMenuFrame
 		DaliRequestArgs a = new DaliRequestArgs();
 		a.request = request;
 		a.response = response;
+		a.parser = p;
 		
 		ctrl.processRequest(a);		
 	}

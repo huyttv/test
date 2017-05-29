@@ -7,5 +7,6 @@ public class DaliRequestArgs {
 
 	public HttpServletRequest request;
 	public HttpServletResponse response;
+	public DaliRequestParser parser;
 
 }
